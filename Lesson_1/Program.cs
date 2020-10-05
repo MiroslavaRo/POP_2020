@@ -6,7 +6,7 @@ namespace Lesson_1
     {
         static void Main(string[] args)
         {
-            Task_3_Dates();
+            Circle();
             /* Console.WriteLine("Your age now is...");
              int old = int.Parse(Console.ReadLine());
              Console.WriteLine("After 10 years you will be {0} aged", old + 10);*/
@@ -70,6 +70,17 @@ namespace Lesson_1
             Console.ReadKey();
         }
 
+        static void Circle()
+        {
+            Console.WriteLine("Please enter Radius: ");
+            double R = double.Parse(Console.ReadLine());
+            double a = Math.PI * Math.Pow(R, 2);
+            double b = 2 * Math.PI * R;
+            Console.WriteLine("Area = {0:f4}", a);
+            Console.WriteLine("Circumference = {0:f4}", b);
+            Console.ReadKey();
+
+        }
 
         static void Task_3_Dates()
         {
