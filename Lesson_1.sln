@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class_work_lesson_1", "Lesson_1\Class_work_lesson_1.csproj", "{F7EE81C2-6D22-4B6C-8FFC-C2B0286DCF63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POP_Class_work_lesson_1", "Lesson_1\POP_Class_work_lesson_1.csproj", "{F7EE81C2-6D22-4B6C-8FFC-C2B0286DCF63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Home_work_Lesson_1", "task_01\Home_work_Lesson_1.csproj", "{C07E8A4E-2799-4EEA-A0A4-F7E5258F080F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POP_Homework_Lesson_1", "task_01\POP_Homework_Lesson_1.csproj", "{C07E8A4E-2799-4EEA-A0A4-F7E5258F080F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures_Class_Work_1", "DataStructures_Class_Work_1\DataStructures_Class_Work_1.csproj", "{C7164982-9FEE-4976-943F-1609681DC1FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures_Homework_1", "DataStructures_Homework_1\DataStructures_Homework_1.csproj", "{22EC8305-A5D2-418E-B63E-C8EC4668C319}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{C07E8A4E-2799-4EEA-A0A4-F7E5258F080F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C07E8A4E-2799-4EEA-A0A4-F7E5258F080F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C07E8A4E-2799-4EEA-A0A4-F7E5258F080F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7164982-9FEE-4976-943F-1609681DC1FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7164982-9FEE-4976-943F-1609681DC1FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7164982-9FEE-4976-943F-1609681DC1FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7164982-9FEE-4976-943F-1609681DC1FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22EC8305-A5D2-418E-B63E-C8EC4668C319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22EC8305-A5D2-418E-B63E-C8EC4668C319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22EC8305-A5D2-418E-B63E-C8EC4668C319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22EC8305-A5D2-418E-B63E-C8EC4668C319}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

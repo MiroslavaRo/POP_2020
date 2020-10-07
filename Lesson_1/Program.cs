@@ -6,10 +6,13 @@ namespace Lesson_1
     {
         static void Main(string[] args)
         {
-            Circle();
-            /* Console.WriteLine("Your age now is...");
-             int old = int.Parse(Console.ReadLine());
-             Console.WriteLine("After 10 years you will be {0} aged", old + 10);*/
+           // Circle();
+             Console.WriteLine("Your age now is...");
+            // int old = int.Parse(Console.ReadLine());
+            string ageAsString = Console.ReadLine();
+            int old = int.Parse(ageAsString);
+            Console.WriteLine("After 10 years you will be {0} aged", old + 10);
+            Console.ReadKey();
         }
         static void MeAfterTen()
         {

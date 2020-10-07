@@ -17,6 +17,7 @@ namespace task_01
             //task_09();
             task_10();
         }
+        
         static void task_01()
         {
             Console.WriteLine("Please, tape your name");
