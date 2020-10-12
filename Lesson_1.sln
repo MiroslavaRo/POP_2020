@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POP_Class_work_lesson_1", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POP_Homework_Lesson_1", "task_01\POP_Homework_Lesson_1.csproj", "{C07E8A4E-2799-4EEA-A0A4-F7E5258F080F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures_Class_Work_1", "DataStructures_Class_Work_1\DataStructures_Class_Work_1.csproj", "{C7164982-9FEE-4976-943F-1609681DC1FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructures_Class_Work_1", "DataStructures_Class_Work_1\DataStructures_Class_Work_1.csproj", "{C7164982-9FEE-4976-943F-1609681DC1FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures_Homework_1", "DataStructures_Homework_1\DataStructures_Homework_1.csproj", "{22EC8305-A5D2-418E-B63E-C8EC4668C319}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructures_Homework_1", "DataStructures_Homework_1\DataStructures_Homework_1.csproj", "{22EC8305-A5D2-418E-B63E-C8EC4668C319}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POP_Class_work_lesson_2", "POP_Class_work_lesson_2\POP_Class_work_lesson_2.csproj", "{C2BFBB3A-A30E-4B05-8507-B8D1A21A26C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{22EC8305-A5D2-418E-B63E-C8EC4668C319}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22EC8305-A5D2-418E-B63E-C8EC4668C319}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22EC8305-A5D2-418E-B63E-C8EC4668C319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2BFBB3A-A30E-4B05-8507-B8D1A21A26C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2BFBB3A-A30E-4B05-8507-B8D1A21A26C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2BFBB3A-A30E-4B05-8507-B8D1A21A26C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2BFBB3A-A30E-4B05-8507-B8D1A21A26C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
