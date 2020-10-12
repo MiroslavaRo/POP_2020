@@ -9,8 +9,8 @@ namespace POP_Class_work_lesson_2
             //task01();
             //task02();
             //task03();
-            task04();
-            //task05();
+            //task04();
+            task05();
         }
         static void task01()
         {
@@ -171,17 +171,82 @@ namespace POP_Class_work_lesson_2
         }
         static void task05()
         {
-            Console.Write("Please, type your first name ");
-            int Fd = int.Parse(Console.ReadLine());
-            Console.Write("Please, type your last name ");
-            int Ld = int.Parse(Console.ReadLine());
-            Console.Write("Please, type your date of birth ");
-            int Bd = int.Parse(Console.ReadLine());
-            Console.Write("Please, type your last name ");
-            int Sn = int.Parse(Console.ReadLine());
-
+            Console.Write("Please, type your first name (limit 100 symb): ");
+            string Fd = Console.ReadLine();
+            Console.Write("Please, type your last name (limit 100 symb): ");
+            string Ld = Console.ReadLine();
+            Console.Write("Please, type your date of birth (limit 100 years): ");
+            long Bd = long.Parse(Console.ReadLine());
+            Console.Write("Please, type your student number (format YYYYFFSSNNNN): ");
+            long Sn = long.Parse(Console.ReadLine());
+            Console.WriteLine($"First name: {FirstName(Fd)}");
+            Console.WriteLine($"Second Name: {LastName(Ld)}");
+            Console.WriteLine($"Date of birt: {DateOfBirth(Bd)}");
+            Console.WriteLine($"Student number: {StudentNumber(Sn)}");
+           
+            Console.ReadKey();
+        }
+        static string FirstName(string Fd)
+        {
+            int k = 0;
+            foreach(char c in Fd)
+            {
+                k++;
+            }
+            if (k <= 100)
+            {
+                return Fd;
+            }
+            else
+            {
+                return "Error";
+            }
+        }
+        static string LastName(string Ld)
+        {
+            int k = 0;
+            foreach (char c in Ld)
+            {
+                k++;
+            }
+            if (k <= 100)
+            {
+                return Ld;
+            }
+            else
+            {
+                return "Error";
+            }
 
         }
+        static string DateOfBirth(long Bd)
+        {
+            DateTime d =  DateTime.Now;
+            long a = (int.Parse(d.ToString("yyyy")) - Bd);
+            if (a<=100&&a>0)
+            {
+                return Convert.ToString(Bd);
+            }
+            else
+            {
+                return "Error";
+            }
 
+        }
+        static string StudentNumber(long Sn)
+        {
+            long a = (Sn / 1000000) % 10;
+            long b = (Sn / 10000) % 10;            
+            if (a >= 1 && a <= 9&&b>=1&&b<=5)
+            {
+                return Convert.ToString(Sn);
+            }
+            else
+            {
+                return "Error";
+            }
+
+        }
     }
 }
+
