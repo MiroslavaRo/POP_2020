@@ -111,44 +111,10 @@ namespace POP_Class_work_lesson_2
             int day = int.Parse(Console.ReadLine());
             Console.Write("Please, type time of the day (0-23): ");
             int time = int.Parse(Console.ReadLine());
-            string Day = "";
-            string s= "";
+            //string Day = "";
+            //string s= "";
             string Time = "";
-            switch (day)
-            {
-                case 1:
-                    Day = "Monday";
-                    s= "Weekend is coming in 5 days";
-                    break;
-                case 2:
-                    Day = "Tuesday";
-                    s = "Weekend is coming in 4 days";
-                    break;
-                case 3:
-                    Day = "Wednesday";
-                    s = "Weekend is coming in 3 days";
-                    break;
-                case 4:
-                    Day = "Thursday";
-                    s = "Weekend is coming in 2 days";
-                    break;
-                case 5:
-                    Day = "Friday";
-                    s = "Weekend is coming in 1 days";
-                    break;
-                case 6:
-                    Day = "Saturday";
-                    s = "Weekend is here!";
-                    break;
-                case 7:
-                    Day = "Sunday";
-                    s = "Weekend is here!";
-                    break;
-                default:
-                    Day = "(the day isn't determined)";
-                    s= "Weekend can't be definded";
-                    break;
-            }
+           
             if (time >= 0 && time <= 6)
             {
                 Time = "night";
@@ -170,12 +136,50 @@ namespace POP_Class_work_lesson_2
                 Time = "(time isn't determined)";
             }
 
-             Console.Write($"Good {Time}, it is a lovely {Day} today. {s}");
+             Console.Write($"Good {Time}, it is a lovely {GetDayOfWeek(day)} today. {GetDayPeriodToWeekend(day)}");
 
 
         }
+        static string GetDayOfWeek(int day)
+        {
+            switch (day)
+            {
+                case 1:return"Monday";                                  
+                case 2:return"Tuesday";                   
+                case 4:return"Thursday";                
+                case 5:return"Friday";                    
+                case 6:return"Saturday";                  
+                case 7:return"Sunday";                   
+                default:return "(the day isn't determined)";
+            }
+        }
+        static string GetDayPeriodToWeekend(int day)
+        {
+            switch (day)
+            {
+                case 1: 
+                case 2: 
+                case 4: 
+                case 5: 
+                    return $"Weekend is coming in {6-day} days.";
+                case 6: 
+                case 7: 
+                    return "Weekend is here!";
+                default:
+                    return "(the period of the day isn't determined)";
+            }
+        }
         static void task05()
         {
+            Console.Write("Please, type your first name ");
+            int Fd = int.Parse(Console.ReadLine());
+            Console.Write("Please, type your last name ");
+            int Ld = int.Parse(Console.ReadLine());
+            Console.Write("Please, type your date of birth ");
+            int Bd = int.Parse(Console.ReadLine());
+            Console.Write("Please, type your last name ");
+            int Sn = int.Parse(Console.ReadLine());
+
 
         }
 
