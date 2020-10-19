@@ -84,12 +84,14 @@ namespace POP_Class_work_lesson_3
             char[] rm =new char[m.Length];
             char[] reversemessage = new char[m.Length];
             char[] message = m.ToCharArray();
+           // int indexUpp = 0;
+            int index = 0;
             for (int j = 0; j < message.Length; j++)
             { 
                 if (char.IsLetter(message[j])) {
 
-                    int index = a.IndexOf(IsUpp(message, j));
-                    reversemessage[j] = char.ToUpper(reverse[index]);
+                     index = a.IndexOf(IsUpp(message, j));
+                     reversemessage[j] = reverse[index]; 
 
                 }
                 else
@@ -127,19 +129,8 @@ namespace POP_Class_work_lesson_3
             
             return mes;
         }
-      /* static char UppRev (char []reversemessage, int j, char []reverse, int index, char []message)
-        {
-            char mes2 = new char();
-            if (char.IsUpper(message[j]))
-            {                 
-                mes2 = char.ToUpper(reverse[index]);
-            }
-            else
-            {
-                mes2 = reverse[index];
-            }
-            return mes2;
-        }*/
+
+       
     
          
          
