@@ -72,26 +72,38 @@ namespace POP_Class_work_lesson_3
          static void task03()
           {
             char[] alphabet = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-            char[] reverse = new char[alphabet.Length];
+            char[] Alphabet = new char[alphabet.Length];
+            for (int i = 0; i < alphabet.Length; i++)
+            {
+                Alphabet[i] = char.ToUpper(alphabet[i]);
+            }
+                char[] reverse = new char[2*(alphabet.Length)];
+            string A = new string(Alphabet);
             string a = new string (alphabet);
             string r = reverse.ToString();
             for(int i=0;i< alphabet.Length; i++)
-            {
+            {                
                 reverse[i] = alphabet[alphabet.Length-1-i];
+                reverse[alphabet.Length + i] = A[Alphabet.Length - 1 - i];
             }
             Console.WriteLine("Please, write a message which you want to be encrypted: ");
-            string m = Console.ReadLine();            
-            char[] rm =new char[m.Length];
+            string m = Console.ReadLine(); 
             char[] reversemessage = new char[m.Length];
-            char[] message = m.ToCharArray();
-           // int indexUpp = 0;
+            char[] message = m.ToCharArray();            
             int index = 0;
             for (int j = 0; j < message.Length; j++)
             { 
                 if (char.IsLetter(message[j])) {
-
-                     index = a.IndexOf(IsUpp(message, j));
-                     reversemessage[j] = reverse[index]; 
+                                   
+                    if (char.IsUpper(message[j])){
+                        index = A.IndexOf(message[j]);
+                        reversemessage[j] = reverse[alphabet.Length+index];
+                    }
+                    else
+                    {
+                        index = a.IndexOf(message[j]);
+                        reversemessage[j] = reverse[index];
+                    }                                        
 
                 }
                 else
@@ -107,6 +119,7 @@ namespace POP_Class_work_lesson_3
                 }
                          
             }
+
             Console.WriteLine();
             foreach(char elem in reversemessage)
             {
@@ -114,21 +127,7 @@ namespace POP_Class_work_lesson_3
             }           
       
         }
-       static char IsUpp(char[] message, int j)
-        { char mes = new char();
-            if (char.IsUpper(message[j]))
-                {
-                message[j] = char.ToLower(message[j]);
-                mes = message[j];
-
-                }
-            else
-                {
-                mes = message[j];
-            }
-            
-            return mes;
-        }
+      
 
        
     
