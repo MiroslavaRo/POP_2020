@@ -77,10 +77,9 @@ namespace POP_Class_work_lesson_3
             {
                 Alphabet[i] = char.ToUpper(alphabet[i]);
             }
-                char[] reverse = new char[2*(alphabet.Length)];
+            char[] reverse = new char[2*(alphabet.Length)];
             string A = new string(Alphabet);
             string a = new string (alphabet);
-            string r = reverse.ToString();
             for(int i=0;i< alphabet.Length; i++)
             {                
                 reverse[i] = alphabet[alphabet.Length-1-i];
@@ -91,6 +90,7 @@ namespace POP_Class_work_lesson_3
             char[] reversemessage = new char[m.Length];
             char[] message = m.ToCharArray();            
             int index = 0;
+            double num = 0;
             for (int j = 0; j < message.Length; j++)
             { 
                 if (char.IsLetter(message[j])) {
@@ -111,6 +111,11 @@ namespace POP_Class_work_lesson_3
                     if (char.IsPunctuation(message[j]))
                     {
                         reversemessage[j] = message[j];
+                    }
+                    if (char.IsNumber(message[j]))
+                    {
+                        num = 9 - char.GetNumericValue(message[j]);
+                        reversemessage[j] = (char)(num+ '0');
                     }
                     else
                     {
