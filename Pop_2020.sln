@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POP_Homework_Lesson_1", "ta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POP_Class_work_lesson_2", "POP_Class_work_lesson_2\POP_Class_work_lesson_2.csproj", "{C2BFBB3A-A30E-4B05-8507-B8D1A21A26C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POP_Class_work_lesson_3", "POP_Class_work_lesson_3\POP_Class_work_lesson_3.csproj", "{195CB1F0-D60B-42CE-A508-76E8B9433856}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POP_Class_work_lesson_3", "POP_Class_work_lesson_3\POP_Class_work_lesson_3.csproj", "{195CB1F0-D60B-42CE-A508-76E8B9433856}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POP_Class_work_lesson_4", "POP_Class_work_lesson_4\POP_Class_work_lesson_4.csproj", "{CA11AFAD-E715-46B4-A97F-CB62AEE5A09F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{195CB1F0-D60B-42CE-A508-76E8B9433856}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{195CB1F0-D60B-42CE-A508-76E8B9433856}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{195CB1F0-D60B-42CE-A508-76E8B9433856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA11AFAD-E715-46B4-A97F-CB62AEE5A09F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA11AFAD-E715-46B4-A97F-CB62AEE5A09F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA11AFAD-E715-46B4-A97F-CB62AEE5A09F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA11AFAD-E715-46B4-A97F-CB62AEE5A09F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
