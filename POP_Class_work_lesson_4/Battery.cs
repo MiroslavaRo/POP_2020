@@ -6,10 +6,19 @@ namespace POP_Class_work_lesson_4
 {
     public class Battery
     {
-        private string nameofbattery;        
-        public Battery(string nameofbattery)
+        private string nameofbattery;
+        private int numofcells;
+        private int mAh;
+        public Battery(string nameofbattery, int numofcells, int mAh)
         {
             Name= nameofbattery;
+            Numofcells = numofcells;
+            MAh = mAh;
+
+        }
+        public Battery(string nameofbattery)
+        {
+            this.nameofbattery = nameofbattery;
         }
         public string Name
         {
@@ -24,9 +33,47 @@ namespace POP_Class_work_lesson_4
                 nameofbattery = value;
             }
         }
+        public int Numofcells
+        {
+            get => numofcells;
+
+            set
+            {
+                if (value<0)
+                {
+                    throw new ArgumentNullException("Battery cells can`t be empty!");
+                }
+                numofcells = value;
+            }
+
+        }
+        public int MAh
+        {
+            get => mAh;
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentNullException("Battery mAh can`t be empty!");
+                }
+                mAh = value;
+            }
+
+        }
+
+
         public override string ToString()
         {
-            return $"Battery: {nameofbattery}";
+            if(numofcells==0&& mAh == 0)
+            {
+                return $"Battery: {nameofbattery}";
+            }
+            else
+            {
+                return $"Battery: {nameofbattery}, {numofcells}-cells, {mAh} mAh";
+            }
+            
         }
 
     }

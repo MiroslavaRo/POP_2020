@@ -33,7 +33,7 @@ namespace POP_Class_work_lesson_4
         private static void task_03()
         {
             Battery bt = new Battery("Li-lonn");
-            Laptop lp = new Laptop("Lenovo Yoga 2 Pro", "Lenovo" , "Intel core 5i" ,"8 GB" ,"Intel HD Graphics 4400" , "128 GB SSD", "32000x1800", bt, 12, 1200);
+            Laptop lp = new Laptop("Lenovo Yoga 2 Pro", "Lenovo" , "Intel core 5i" , 8 ,"Intel HD Graphics 4400" , 128, "32000x1800", bt, 12, 1200);
             
             Console.WriteLine(lp.ToString());
         }

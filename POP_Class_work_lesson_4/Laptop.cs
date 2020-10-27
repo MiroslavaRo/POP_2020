@@ -10,16 +10,16 @@ namespace POP_Class_work_lesson_4
         private string model;
         private string manufacturer;
         private string processor;
-        private string RAM;
+        private int RAM;
         private string graphics_card;
-        private string HDD;
+        private int HDD;
         private string screen;        
         private int battery_life;
         private decimal price;
         public Battery name;
 
         
-       public Laptop(string model, string manufacturer, string processor, string RAM, string graphics_card, string HDD, string screen, Battery name, int battery_life, decimal price)
+       public Laptop(string model, string manufacturer, string processor, int RAM, string graphics_card, int HDD, string screen, Battery name, int battery_life, decimal price)
         {
             Model = model;
             Manufacturer = manufacturer;
@@ -79,13 +79,13 @@ namespace POP_Class_work_lesson_4
                 processor = value;
             }
         }
-        public string ram
+        public int ram
         {
             get => RAM;
 
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (value<0)
                 {
                     throw new ArgumentNullException("Ram can`t be empty!");
                 }
@@ -105,13 +105,13 @@ namespace POP_Class_work_lesson_4
                 graphics_card = value;
             }
         }
-        public string hdd
+        public int hdd
         {
             get => HDD;
 
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (value<10)
                 {
                     throw new ArgumentNullException("HDD can`t be empty!");
                 }
@@ -139,7 +139,7 @@ namespace POP_Class_work_lesson_4
 
             set
             {
-                if (value<=0)
+                if (value<0)
                 {
                     throw new ArgumentNullException("Battery life hours can`t be negative!");
                 }
@@ -153,7 +153,7 @@ namespace POP_Class_work_lesson_4
 
             set
             {
-                if (value<=0)
+                if (value<0)
                 {
                     throw new ArgumentNullException("Price can`t be negative!");
                 }
@@ -163,7 +163,7 @@ namespace POP_Class_work_lesson_4
         public override string ToString()
         {
             
-            return $"Laptop Model: {Model}, \nManufacturer: {Manufacturer}, \nProcessor: {Processor}, \nRAM: {RAM}, \nGraphics card: {Graphics_card}, \nHDD: {HDD}, \nScreen:{Screen}, \n{Nameofbattery}, \nBattery life: {Battery_life} hourrs, \nPrice: {Price} lv.";
+            return $"Laptop Model: {Model}, \nManufacturer: {Manufacturer}, \nProcessor: {Processor}, \nRAM: {RAM} GB, \nGraphics card: {Graphics_card}, \nHDD: {HDD} GB SSD, \nScreen:{Screen}, \n{Nameofbattery}, \nBattery life: {Battery_life} hourrs, \nPrice: {Price} lv.";
         }
     }
     
