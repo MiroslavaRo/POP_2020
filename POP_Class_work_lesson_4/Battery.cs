@@ -6,11 +6,10 @@ namespace POP_Class_work_lesson_4
 {
     public class Battery
     {
-        public string nameofbattery;
-        
+        private string nameofbattery;        
         public Battery(string nameofbattery)
         {
-            Name = nameofbattery;
+            Name= nameofbattery;
         }
         public string Name
         {
@@ -24,6 +23,10 @@ namespace POP_Class_work_lesson_4
                 }
                 nameofbattery = value;
             }
+        }
+        public override string ToString()
+        {
+            return $"Battery: {nameofbattery}";
         }
 
     }

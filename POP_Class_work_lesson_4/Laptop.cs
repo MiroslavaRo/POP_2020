@@ -16,9 +16,10 @@ namespace POP_Class_work_lesson_4
         private string screen;        
         private int battery_life;
         private decimal price;
-        private string nameofbattery;
+        public Battery name;
+
         
-        public Laptop(string model, string manufacturer, string processor, string RAM, string graphics_card, string HDD, string screen, string nameofbattery, int battery_life, decimal price)
+       public Laptop(string model, string manufacturer, string processor, string RAM, string graphics_card, string HDD, string screen, Battery name, int battery_life, decimal price)
         {
             Model = model;
             Manufacturer = manufacturer;
@@ -27,12 +28,11 @@ namespace POP_Class_work_lesson_4
             Graphics_card =graphics_card;
             hdd = HDD;
             Screen = screen;
-            Nameofbattery = nameofbattery;
+            Nameofbattery = name; 
             Battery_life = battery_life;
-            Price = price;
-            
-
+            Price = price;   
         }
+
         public Laptop(string model, int price) 
         {
             this.model = model;
@@ -132,18 +132,7 @@ namespace POP_Class_work_lesson_4
             }
         }
         
-        public string Nameofbattery
-        {
-            get => nameofbattery;
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentNullException(" can`t be empty!");
-                }
-                nameofbattery = value;
-            }
-        }
+       public Battery Nameofbattery { get; set; }
         public int Battery_life
         {
             get => battery_life;
@@ -174,7 +163,7 @@ namespace POP_Class_work_lesson_4
         public override string ToString()
         {
             
-            return $"Laptop Model: {Model}, Manufacturer: {Manufacturer}, Processor: {Processor}, RAM: {RAM}, Graphics card: {Graphics_card}, HDD: {HDD}, Screen:{Screen}, Battery: {nameofbattery} Battery life: {Battery_life} hourrs, Price: {Price} lv.";
+            return $"Laptop Model: {Model}, \nManufacturer: {Manufacturer}, \nProcessor: {Processor}, \nRAM: {RAM}, \nGraphics card: {Graphics_card}, \nHDD: {HDD}, \nScreen:{Screen}, \n{Nameofbattery}, \nBattery life: {Battery_life} hourrs, \nPrice: {Price} lv.";
         }
     }
     
