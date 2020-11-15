@@ -26,10 +26,7 @@ namespace POP_Class_work_lesson_4
 
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentNullException("Battery can`t be empty!");
-                }
+                
                 nameofbattery = value;
             }
         }
