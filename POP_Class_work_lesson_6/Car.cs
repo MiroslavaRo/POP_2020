@@ -8,6 +8,8 @@ namespace POP_Class_work_lesson_6
     class Car
     {
         private string colorName;
+        private string makeName;
+        private string modelName;
 
         private int year;
 
@@ -18,7 +20,7 @@ namespace POP_Class_work_lesson_6
             get
             {
                 return year;
-            }
+            } 
             set
             {
                 if (value >= 1900 && value <= 2050)
@@ -27,7 +29,7 @@ namespace POP_Class_work_lesson_6
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException("Year must be between 1900 to 2050");
                 }
             }
         }
@@ -63,10 +65,59 @@ namespace POP_Class_work_lesson_6
                 }
             }
         }
+        public string MakeName
+        {
+            get
+            {
+                switch (Make)
+                {
+                    case Make.other:
+                        return makeName;
 
+                    default:
+                        return Make.ToString();
+                }
+            }
+            set
+            {
+                if (value.Length <= 10)
+                {
+                    makeName = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+        public string ModelName
+        {
+            get
+            {
+                switch (Model)
+                {
+                    case Model.other:
+                        return modelName;
+
+                    default:
+                        return Model.ToString();
+                }
+            }
+            set
+            {
+                if (value.Length <= 10)
+                {
+                    modelName = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
         public override string ToString()
         {
-            return $"{Make} {Model} {Color} {RegistrationNumber}";
+            return $"{MakeName} {ModelName} {ColorName} {RegistrationNumber}";
         }
     }
 }

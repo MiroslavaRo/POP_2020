@@ -12,7 +12,9 @@ namespace POP_Class_work_lesson_6
             Toyota,
             Ford,
             Renault,
-            Peugeot
+            Peugeot,
+            _null,
+            other
                                  
 
         }
@@ -26,7 +28,9 @@ namespace POP_Class_work_lesson_6
             Escape,
             Megane,
             _406,
-            _306
+            _306,
+            _null,
+            other
         }
 
         public enum Color
@@ -34,7 +38,8 @@ namespace POP_Class_work_lesson_6
             Red = 1,
             Blue = 2,
             Yellow = 3,
-            other = 0
+            other = 4,
+            _null
         }
         
     }
