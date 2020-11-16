@@ -27,7 +27,7 @@ namespace POP_Class_work_lesson_6
 
         public bool Remove(int itemIndex)
         {
-            if (itemIndex > 0 && itemIndex < Items.Count)
+            if (itemIndex > 0 && itemIndex <= Items.Count)
             {
                 Items.RemoveAt(itemIndex);
                 return true;

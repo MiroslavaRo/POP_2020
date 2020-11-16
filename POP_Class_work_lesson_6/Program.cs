@@ -65,12 +65,12 @@ namespace POP_Class_work_lesson_6
         private static void RemoveCar()
         {
             Console.Clear();
-            Console.Write("Please enter an index of car to remove: ");
+            Console.Write("Please enter an index of car to remove (1-...): ");
             string userInput = Console.ReadLine();
 
             if (int.TryParse(userInput, out int i))
             {
-                if (cars.Remove(i))
+                if (cars.Remove(i-1))
                 {
                     Console.WriteLine("Car was removed from the list");
                 }
@@ -215,8 +215,6 @@ namespace POP_Class_work_lesson_6
                         correct1 = true;
                         break;
                 }
-                EnterToContinue();
-                Console.Clear();
             }
             return make;
 
@@ -507,7 +505,6 @@ namespace POP_Class_work_lesson_6
                 }
                 else if (checkYear && year >= 1900 && year <= 2050)
                 {
-                    Console.WriteLine(year);
                     correct = false;
                 }
                 else
