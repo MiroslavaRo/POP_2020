@@ -144,19 +144,19 @@ namespace POP_Class_work_lesson_6
                 }
                 else
                 {
+                    Console.WriteLine("\nCar was added to the list");
                     if (make2 != Make.other|| model2!=Model.other|| color2 != Color.other)
                     {
                         user = new Car { Make = make2, MakeName = makename2, Model = model2, ModelName= modelname2, Color = color2, ColorName = colorname2, Year = year2 };
                         cars.Add(user);
-                        Console.WriteLine("\nCar was added to the list");
+                        
                     }
                     else
                     {
                         user = new Car { Make = make2, MakeName = makename2, Model = model2, ModelName = modelname2, Color = color2, ColorName = colorname2,Year = year2 };
                         cars.Add(user);
-                        Console.WriteLine("\nCar was added to the list");
                     }
-                    Console.WriteLine("List of cars: \n");
+                    EnterToContinue();
                     ListAllCars();
                     overall = false;
                 }
@@ -325,12 +325,12 @@ namespace POP_Class_work_lesson_6
                 {
                     switch (str2)
                     {
-                        case "5":
+                        case "6":
                             model = Model._306;
                             Console.WriteLine(model);
                             correct2 = false;
                             break;
-                        case "6":
+                        case "7":
                             model = Model._406;
                             Console.WriteLine(model);
                             correct2 = false;
@@ -351,7 +351,7 @@ namespace POP_Class_work_lesson_6
                 {
                     switch (str2)
                     {
-                        case "7":
+                        case "5":
                             model = Model.Megane;
                             Console.WriteLine(model);
                             correct2 = false;
@@ -371,8 +371,7 @@ namespace POP_Class_work_lesson_6
                     model = Model.other;
                     break;
                 }
-                EnterToContinue();
-                Console.Clear();
+                
             }
             return model;
         }
@@ -419,9 +418,10 @@ namespace POP_Class_work_lesson_6
             bool correct = true;
             Console.WriteLine("Please choose color of your car: \nPossible possible options: \n1.Red \n2.Blue\n3.Yellow\n4.Other");
             Console.WriteLine("\n\t Enter 'e' to exit");
-            var str = Console.ReadLine();
+           
             while (correct)
             {
+                var str = Console.ReadLine();
                 if (str == "e")
                 {
                     color = Color._null;
@@ -450,7 +450,8 @@ namespace POP_Class_work_lesson_6
                         break;
                 }
             }
-           
+            EnterToContinue();
+            Console.Clear();
             return color;            
         }
         private static string NameColor(Color color2)
@@ -498,7 +499,7 @@ namespace POP_Class_work_lesson_6
             {
                 string str = Console.ReadLine();
                 bool checkYear = int.TryParse(str, out year);
-                if (str == "e")
+                if (str == "e") 
                 {                   
                     correct = false;
                     return year;

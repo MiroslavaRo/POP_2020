@@ -36,31 +36,41 @@ namespace POP_Class_work_lesson_6
         }
         public string Search(string userinput)
         {
-            var arrayOfCars = new StringBuilder(10);
+
+            var newar = new char[3];
+            var userinputString = userinput.Split(" ");
             string searchingCar = "not found anything";
+            var arrayOfCars = new StringBuilder(10);
             foreach (var i in Items)
             {
-                if (userinput.Length >= 4) {
-                    if (i.ToString().ToLower().Contains(userinput.ToLower()))
-                    {
-                        arrayOfCars.Append("\n");
-                        arrayOfCars.Append(i.ToString());
-                    }
-
-                }               
+                var itemsarray = i.ToString().ToLower().Split(" ");
+                if(itemsarray[0]== userinputString[0]&& itemsarray[2] == userinputString[1])
+                {
+                    arrayOfCars.Append("\n");
+                    arrayOfCars.Append(i.ToString());            
+                }                   
+                                
+                else if (i.ToString().ToLower().Contains(userinput.ToLower()))
+                {
+                    arrayOfCars.Append("\n");
+                    arrayOfCars.Append(i.ToString());                    
+                }
                 else
                 {
-                    arrayOfCars.Append(searchingCar);
-                    return arrayOfCars.ToString();
+                    continue;
                 }
+
             }
             if (arrayOfCars.Length == 0)
             {
                 arrayOfCars.Append(searchingCar);
                 return arrayOfCars.ToString();
             }
-            return arrayOfCars.ToString();
-
+            else
+            {
+                return  arrayOfCars.ToString();
+            }
+            
         }
         public void List()
         {
