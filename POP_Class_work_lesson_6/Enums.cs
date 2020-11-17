@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace POP_Class_work_lesson_6
+namespace POP_Class_work_lesson_7
 {
-    class Enums
+   public class Enums
     {
        
         public enum Make
@@ -15,10 +15,7 @@ namespace POP_Class_work_lesson_6
             Peugeot,
             _null,
             other
-                                 
-
         }
-
         public enum Model
         {
             Civic,

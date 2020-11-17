@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualBasic.CompilerServices;
 using System;
 
-namespace POP_Class_work_lesson_4
+namespace POP_Class_work_lesson_5
 {
     class Program
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices.ComTypes;
 
-namespace POP_Class_work_lesson_3
+namespace POP_Class_work_lesson_4
 {
     class Program
     {

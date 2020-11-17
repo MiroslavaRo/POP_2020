@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace POP_Class_work_lesson_2
+namespace POP_Class_work_lesson_3
 {
     class Program
     {

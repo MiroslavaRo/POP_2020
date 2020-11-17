@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace POP_Class_work_lesson_4
+namespace POP_Class_work_lesson_5
 {
    public class  Dog
     {

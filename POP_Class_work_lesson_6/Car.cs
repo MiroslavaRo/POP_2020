@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using static POP_Class_work_lesson_6.Enums;
+using static POP_Class_work_lesson_7.Enums;
 
-namespace POP_Class_work_lesson_6
+namespace POP_Class_work_lesson_7
 {
-    class Car
+    public class Car : IVehicle
     {
         private string colorName;
         private string makeName;
         private string modelName;
-
         private int year;
 
         public string RegistrationNumber { get; set; }
@@ -20,7 +17,7 @@ namespace POP_Class_work_lesson_6
             get
             {
                 return year;
-            } 
+            }
             set
             {
                 if (value >= 1900 && value <= 2050)
@@ -29,7 +26,7 @@ namespace POP_Class_work_lesson_6
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException("Year must be between 1900 to 2050");
+                    throw new ArgumentOutOfRangeException();
                 }
             }
         }
@@ -115,9 +112,10 @@ namespace POP_Class_work_lesson_6
                 }
             }
         }
+
         public override string ToString()
         {
-            return $"{MakeName} {ModelName} {ColorName} {RegistrationNumber}";
+            return $"{MakeName,-10} {ModelName,-10} {ColorName,-10} Year:{Year} Reg.No:{RegistrationNumber} ";
         }
     }
 }

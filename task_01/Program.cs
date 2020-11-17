@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace task_01
+namespace POP_Homework_Lesson_2
 {
     class Program
     {

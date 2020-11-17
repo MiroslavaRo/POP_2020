@@ -1,18 +1,18 @@
 ﻿using System;
-using static POP_Class_work_lesson_6.Enums;
-namespace POP_Class_work_lesson_6
+using static POP_Class_work_lesson_7.Enums;
+namespace POP_Class_work_lesson_7
 {
-    class Program
+   internal class Program
     {
         private static Catalogue<Car> cars = new Catalogue<Car>();
 
         private static void Main(string[] args)
         {
-            cars.Add(new Car { Make = Make.Ford, Model = Model.Escape, Color = Color.Blue, Year = 2020 });
-            cars.Add(new Car { Make = Make.Ford, Model = Model.Focus, Color = Color.Blue, Year = 2020 });
-            cars.Add(new Car { Make = Make.Renault, Model = Model.Megane, Color = Color.Blue, Year = 2020 });
-            cars.Add(new Car { Make = Make.Toyota, Model = Model.Corolla, Color = Color.Blue, Year = 2020 });
-            cars.Add(new Car { Make = Make.Toyota, Model = Model.Camry, Color = Color.Blue, Year = 2020 });
+            cars.Add(new Car { Make = Make.Ford, Model = Model.Escape, Color = Color.Blue, RegistrationNumber = "3", Year = 2010 });
+            cars.Add(new Car { Make = Make.Ford, Model = Model.Focus, Color = Color.Blue, RegistrationNumber = "1", Year = 2020 });
+            cars.Add(new Car { Make = Make.Renault, Model = Model.Megane, Color = Color.Blue, RegistrationNumber = "5", Year = 2017 });
+            cars.Add(new Car { Make = Make.Toyota, Model = Model.Corolla, Color = Color.Blue, RegistrationNumber = "2", Year = 2040 });
+            cars.Add(new Car { Make = Make.Toyota, Model = Model.Camry, Color = Color.Blue, RegistrationNumber = "4", Year = 2000 });
 
             while (true)
             {
@@ -36,12 +36,15 @@ namespace POP_Class_work_lesson_6
                             break;
 
                         case "3":
-                            ListAllCars();
+                            OrderBy();
                             break;
 
                         case "4":
                             SearchCar();
                             break;
+                       /* case "5":
+                            OrderBy();
+                            break;*/
 
                     }
                 }
@@ -88,23 +91,60 @@ namespace POP_Class_work_lesson_6
         }        
         private static void SearchCar()
         {
-            Console.Write("Please enter make or model or color or year of the searching car with capital letter: ");
-            string input =  Console.ReadLine();
+            var input="";
+            bool check = true;
+            Console.WriteLine("Please, choose searching options: \n1. Searching by year \n2. Searching by make/model/color \n3. Searching by registretion number");
+            while (check)
+            {
+                var choose = Console.ReadLine();
+                switch (choose)
+                {
+                    case "1":
+                        Console.Write("Please enter year of the searching car: ");
+                        input = Console.ReadLine();
+                        Console.WriteLine($"Result of searching: {cars.Search(int.Parse(input))}");
+                        OrderBy();
+                        check = false;
+                        break;
+                    case "2":
+                        Console.Write("Please enter make or model or color of the searching car with capital letter: ");
+                        input = Console.ReadLine();
+                        Console.WriteLine($"Result of searching: {cars.Search(input)}");
+                        check = false;
+                        break;
+                    case "3":
+                        goto case "1";
+                    default:
+                        Console.WriteLine("This optiont dose not available. Please, try again...");
+                        continue;
+
+                }
+
+            }
+            EnterToContinue();
+
+        }
+        private static void OrderBy()
+        {       
             
-            Console.WriteLine($"Result of searching: {cars.Search(input)}");
-            
+            Console.Clear();
+            Console.WriteLine("Please,choose option for ordering: \n1 - by year \n2 - by registrtion number ");
+            var order = Console.ReadLine();
+            cars.Ordering(order);
+            cars.List();
 
             EnterToContinue();
+
         }
         private static void AddNewCar()
         {
+
             Console.Clear();
             bool overall = true;            
             var m = new Make();
             var mo = new Model();
             var c = new Color();
             while (overall) {
-               // bool check = true;
                 var make2 = ChooseMake(m);
                 if(make2 == Make._null)
                 {
@@ -135,7 +175,7 @@ namespace POP_Class_work_lesson_6
                 {
                     break;
                 }
-
+                var r = GetRegistrationNumber();
                 var year2 = ChooseYear();
                 var user = new Car();
                 if (year2 == 0)
@@ -147,17 +187,16 @@ namespace POP_Class_work_lesson_6
                     Console.WriteLine("\nCar was added to the list");
                     if (make2 != Make.other|| model2!=Model.other|| color2 != Color.other)
                     {
-                        user = new Car { Make = make2, MakeName = makename2, Model = model2, ModelName= modelname2, Color = color2, ColorName = colorname2, Year = year2 };
+                        user = new Car { Make = make2, MakeName = makename2, Model = model2, ModelName= modelname2, Color = color2, ColorName = colorname2, RegistrationNumber = r, Year = year2 };
                         cars.Add(user);
                         
                     }
                     else
                     {
-                        user = new Car { Make = make2, MakeName = makename2, Model = model2, ModelName = modelname2, Color = color2, ColorName = colorname2,Year = year2 };
+                        user = new Car { Make = make2, MakeName = makename2, Model = model2, ModelName = modelname2, Color = color2, ColorName = colorname2, RegistrationNumber = r,Year = year2 };
                         cars.Add(user);
                     }
-                    EnterToContinue();
-                    ListAllCars();
+                    OrderBy();
                     overall = false;
                 }
                 
@@ -165,6 +204,7 @@ namespace POP_Class_work_lesson_6
             
 
         }
+
         private static Make ChooseMake(Make m)
         {
             var make = m;
@@ -488,6 +528,35 @@ namespace POP_Class_work_lesson_6
             EnterToContinue();
             Console.Clear();
             return colorName;
+        }
+        private static string GetRegistrationNumber()
+        {
+            var registrationNumber = "";
+            bool check = true;
+            Console.WriteLine("Please, enter the registration number: ");            
+            while (check)
+            {
+                registrationNumber = Console.ReadLine();
+                bool checkReckNum = int.TryParse(registrationNumber, out int num);
+                if (checkReckNum)
+                {
+                    if (num > 0)
+                    {
+                        check = false;
+                        return registrationNumber;                       
+                        
+                    }
+                    else
+                    {
+                        return "Registration Number can't be less than 1";
+                    }
+                }
+                else
+                {
+                    return "Registration Number must be number. Please, try again...";
+                }
+            }
+            return registrationNumber;
         }
         private static int ChooseYear()
         {
