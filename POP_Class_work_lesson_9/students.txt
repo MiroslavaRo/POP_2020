@@ -1,0 +1,3 @@
+﻿Ivan|Petrov|20180001
+Petar|Ivanov|20180002
+John|Smith|20180003
